@@ -1,7 +1,7 @@
 #! /usr/bin/python
 import argparse
 
-examples = """
+examples = """examples
 """
 
 parser = argparse.ArgumentParser(
@@ -21,25 +21,25 @@ def show_menu(l):
     l = l.split(" ")
     counter = 0
     for i in l:
-        feat = i
-        print (counter, feat)
+        features_var = i
+        print (counter, features_var)
         counter += 1
 
 def toggle(index, l):
     fd = open("/sys/kernel/debug/sched_features","w")
-    feat = l.split(" ")[index]
-    feat = feat.split("NO_")
-    isno = not (feat[-1] == feat[0])
-
+    features_var = l.split(" ")[index]
+    features_var = features_var.split("NO_")
+    isno = not (features_var[-1] == features_var[0])
     if isno:
-        fd.write(feat[-1])
-	print("Turned on ", feat[-1])
+        fd.write(features_var[-1])
+	print("Turned on ", features_var[-1])
     else:
-        fd.write("NO_"+feat[-1])
-	print("Turned off ",feat[-1])
+        fd.write("NO_"+features_var[-1])
+	print("Turned off ",features_var[-1])
 
     fd.close()
 
+# Read sched features parsed from above
 p = read_parse_schedfeat()
 
 if args.index >= 0:

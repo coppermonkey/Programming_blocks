@@ -4,41 +4,20 @@ NUMBER_ALGOS = 3
 LIST_SIZE = 200
 
 
-"""
-Simple timing function
-to_call - function to call
-Return values:
-d_time - Function run time
-result - Return value of function ran
-"""
 def time_fn(to_call,param):
 	start = clock()
 	result = to_call(param)
 	d_time = clock()-start;
 	return d_time,result
 
-"""
-Simple comparison function
-a
-b
-"""
 def areEqual(a,b):
 	return True if a==b else False
 
-"""
-Simple testing function
-to_test - function to test
-test_with - parameter to test with
-"""
 def run_test(to_test,test_with):
 	time,value = time_fn(to_test,test_with)
 	return [time,"OK"] if value==t_sorted else [time,"FAIL"]
 
-"""
-Simple implementation of insertion sort
-to_sort - List of values to be sorted
-"""
-def insertion_sort(to_sort):
+def isort(to_sort):
 	i=0
 	while i <= len(to_sort)-1:
 		hole = i;
@@ -50,10 +29,6 @@ def insertion_sort(to_sort):
 		i+=1
 	return to_sort
 
-"""
-Simple implementation of selection sort
-to_sort - list of numbers to be sorted
-"""
 def selection_sort(to_sort):
 	i = 0
 	while i< len(to_sort):
@@ -94,7 +69,4 @@ print("Generating and sorting test values...")
 test = [randint(-100,100) for i in range(LIST_SIZE)]
 t_sorted = shell_sort(test)
 #The tests
-print("RUNNING TESTS...")
-print("Insertion sort: ", run_test(insertion_sort,test), sep="")
-print("Selection sort: ", run_test(selection_sort,test), sep="")
-print("Shell sort:     ", run_test(shell_sort,test),sep="")
+print("Insertion sort: ", run_test(isort,test), sep="")

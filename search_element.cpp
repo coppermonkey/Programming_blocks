@@ -2,19 +2,22 @@
 
 using namespace std;
 
-void create_list(int rangestart, int rangeend, vector<int> &Alist)
+/*
+ * This create a new vector list and prints out the value
+ */
+void create_list(int rangestart, int rangeend, vector<int> &sym_vectors)
 {
-	Alist.reserve(rangeend-rangestart);
+	sym_vectors.reserve(rangeend-rangestart);
 	for(int i=0; i<rangeend-rangestart; i++) {
-		Alist[i] = rangestart+i;
-		cout<<i<<" "<<Alist[i];
+		sym_vectors[i] = rangestart+i;
+		cout<<i<<" "<<sym_vectors[i];
 	}
 }
 int main()
 {
-	vector<int> Alist;
-	create_list(5,9, Alist);
+	vector<int> sym_vectors;
+	create_list(5,9, sym_vectors);
 
-	for(vector<int>::iterator it = Alist.begin(); it!= Alist.end(); it++)
+	for(vector<int>::iterator it = sym_vectors.begin(); it!= sym_vectors.end(); it++)
 		cout<<*it<<endl;
 }

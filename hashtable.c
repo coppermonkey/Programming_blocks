@@ -105,15 +105,8 @@ int main() {
    obj->data = -1;  
    obj->key = -1; 
 
-   hash_ins(1, 20);
-   hash_ins(2, 70);
-   hash_ins(42, 80);
-   hash_ins(4, 25);
-   hash_ins(12, 44);
-   hash_ins(14, 32);
-   hash_ins(17, 11);
-   hash_ins(13, 78);
-   hash_ins(37, 97);
+   for (int i=1; i<40; i*=2)
+	   hash_ins(i, 10*i);
 
    display();
    item = search(37);

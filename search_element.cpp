@@ -13,6 +13,16 @@ void create_list(int rangestart, int rangeend, vector<int> &sym_vectors)
 		cout<<i<<" "<<sym_vectors[i];
 	}
 }
+
+void is_present (int key, vector<int> &Alist)
+{
+	for (int i=0; i<Alist.size(); i++) {
+		if (Alist.at(i) == key)
+			return 1;
+	}
+	return 0;
+}
+
 int main()
 {
 	vector<int> sym_vectors;
@@ -20,4 +30,6 @@ int main()
 
 	for(vector<int>::iterator it = sym_vectors.begin(); it!= sym_vectors.end(); it++)
 		cout<<*it<<endl;
+
+	cout << is_present(-1, Alist);
 }

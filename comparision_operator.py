@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Mar 21 16:46:12 2020
-
 """
 
 
@@ -13,3 +12,4 @@ print('x<y=',x<y)
 print('x>=y=',x>=y)
 print('x<=y=',x<=y)
 print('x!=y=',x!=y)
+print('x==y<x',x==y<x)

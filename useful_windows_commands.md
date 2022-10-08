@@ -6,7 +6,7 @@
 
 ### Force delete a folder
 Sometimes a folder/file can't be deleted and Windows may complain saying file no longer exist. run something like below in that case in cmd prompt
-```bash
+```powershell
 rd /s "\\?\D:\DsMainDev\<remaining-path>"
 ```
 
@@ -32,6 +32,7 @@ gc log.txt | more             # or less if you have it installed
 gc log.txt | %{ $_ -replace '\d+', '($0)' }         # sed
 ```
 
+### Links
 [Native Win32 ports of some GNU utilities (sourceforge.net)](http://unxutils.sourceforge.net/)
 
 #### fd

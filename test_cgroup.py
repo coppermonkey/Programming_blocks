@@ -4,7 +4,7 @@ print("deleting existing cgroups")
 process = sb.Popen(['rmdir', '/sys/fs/cgroup/memory/nn'], stdout=sb.PIPE)
 out, err = process.communicate()
 
-print9"creating new cgroup")
+print("creating new cgroup")
 process = sb.Popen(['mkdir', '-p', '/sys/fs/cgroup/memory/nn'], stdout=sb.PIPE)
 out, err = process.communicate()
 

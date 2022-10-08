@@ -25,6 +25,7 @@ void count_frequency(char inputString[],int s[])
 int main()
 {
 	char inputString1[100],inputString2[100];
+
 	int i,j,flag = 1;
 	int tempString[26] = {0}, auxString[26] = {0};
 
@@ -32,13 +33,17 @@ int main()
 	scanf("%s",inputString1);
 	printf("Enter second inputStringing:");
 	scanf("%s",inputString2);
-	
+
 	// if the length of the two strings are not equal
 	if (inputStringlen(inputString1) != inputStringlen(inputString2))
+
+	if(inputStringlen(inputString1)!=inputStringlen(inputString2)) //if the lengths of two inputStringings are not equal
+
 	{
 		printf("\nStrings are not anagrams");
 		exit(0);
 	}
+
 
 	count_frequency(inputString1,tempString);
 	count_frequency(inputString2,auxString);

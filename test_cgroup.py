@@ -1,3 +1,5 @@
+// This file tests chnages for memory pressure in cgroup
+
 import subprocess as sb
 
 process = sb.Popen(['rmdir', '/sys/fs/cgroup/memory/nn'], stdout=sb.PIPE)
@@ -11,7 +13,7 @@ f.close()
 
 process = sb.Popen(['echo', '$$>/sys/fs/cgroup/memory/nn/tasks'], stdout=sb.PIPE)
 out, err = process.communicate()
-process = sb.Popen(['dd','if=/dev/zero','of=./ff', 'oflag=direct', 'count=10000'], stdout=sb.PIPE)
+process = sb.Popen(['dd','if=/dev/urandom','of=./ff', 'oflag=direct', 'count=10000'], stdout=sb.PIPE)
 out, err = process.communicate()
 
 print(out)

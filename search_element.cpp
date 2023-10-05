@@ -3,7 +3,7 @@
 using namespace std;
 
 /*
- * This create a new vector list and prints out the value
+ * This create a new vector list and prints out the value on the stdout console
  */
 void create_list(int rangestart, int rangeend, vector<int> &sym_vectors)
 {
@@ -26,7 +26,7 @@ void is_present (int key, vector<int> &Alist)
 int main()
 {
 	vector<int> sym_vectors;
-	create_list(5,9, sym_vectors);
+	create_list(6,10, sym_vectors);
 
 	for(vector<int>::iterator it = sym_vectors.begin(); it!= sym_vectors.end(); it++)
 		cout<<*it<<endl;
